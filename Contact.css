@@ -1,0 +1,215 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: var(--primary-color);
+}
+
+:root {
+    /* color */
+    --white-color: #fff;
+    --dark-color:  #2c2c2c;
+    --primary-color:  #fff5e1;
+    --secondary-color: #6d4c41;
+    --light-pink-color:#f3eff3;
+    --medium-gray-color: #ccc;
+    --third-color: #d9a066;
+    
+
+    /* Font size */
+    --font-size-s: 0.9rem;
+    --font-size-n: 1rem;
+    --font-size-m: 1.12rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.3rem;
+
+    /* Font weight */
+    --font-weight-normal:400;
+    --font-weight-medium:500;
+    --font-weight-semibold:600;
+    --font-weight-bold:700;
+
+    /* Border radius */
+    --border-radius-s:8px;
+    --border-radius-m:30px;
+    --border-radius-circle:50px;
+
+    /* site max width */
+    --site-max-width:1300px;
+}
+
+/* Styling for whole site */
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+img{
+    width: 100%;
+}
+
+.section-content{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+
+/* navbar styling */
+header{
+    background:var(--primary-color);
+    z-index: 5;
+    width:100%;
+}
+
+header .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.section-content .nav-logo{
+    display: flex;
+    gap: 30px;
+}
+
+.navbar .nav-logo .head-img{
+   width: 50px;
+   object-fit: cover;
+   border-radius: 40%;
+   display: flex;
+}
+
+.navbar .contro{
+    display: flex;
+}
+
+.navbar .nav-menu{
+    display: flex;
+    gap: 10px;
+}
+.navbar .nav-logo .logo-Text{
+    color:var(--secondary-color);
+    font-size: var(--font-size-xl);
+}
+
+.navbar .nav-menu .nav-link{
+    padding: 10px 18px;
+    color:var(--secondary-color);
+    font-size: var(--font-size-m);
+    border-radius: var(--border-radius-m);
+    transition: 0.3s ease;
+}
+/* vvvvvv */
+.navbar .nav-itemss{
+    position: relative;
+}
+
+.navbar .nav-itemss .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white-color);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* ซ่อนเมนูย่อย */
+    border-radius: var(--border-radius-m);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav-itemss:hover .dropdown {
+    display: block; /* แสดงเมนูย่อยเมื่อ hover */
+}
+
+.navbar .nav-itemss .dropdown li {
+    padding: 10px 18px;
+}
+
+.navbar .nav-itemss .dropdown li a {
+    color: var(--third-color);
+    text-decoration: none;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.navbar .nav-itemss .dropdown li a:hover {
+    background: var(--secondary-color);
+    color: var(--white-color);
+}
+/* vvvvvv */
+.navbar .nav-menu .nav-link:hover{
+    color: var(--white-color); /* เปลี่ยนสีตัวอักษรให้ชัดขึ้น */
+    background: var(--secondary-color); /* เปลี่ยนพื้นหลังเป็นสีม่วง */
+}
+
+
+/* Contact section */
+
+
+.contact-section{
+    background: var(--primary-color);
+}
+.section-title{
+    font-size: var(--font-size-l);
+    text-align: center;
+    padding: 60px 0 100px;
+}
+
+.section-title::after{
+    content: "";
+    background: var(--third-color);
+    width: 80px;
+    height: 5px;
+    display: block;
+    margin: 10px auto 0;
+    transition:0.5s ease-in-out;
+}
+/* เมื่อ hover ที่หัวข้อ ให้เส้นขยายออก */
+.section-title:hover::after {
+    width: 10%;
+}
+
+.contact-section .section-content{
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;      /*อยุ่ด้านบนสุดของcontainer*/
+    justify-content: space-between;
+}
+
+.contact-section .contact-info{
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    align-items: center;
+}
+
+/* footer */
+.footer-top {
+    margin-top: 6rem;
+    background-color: #333; /* เปลี่ยนเป็นสีเทาเข้ม */
+    padding: 40px; /* เพิ่มช่องว่างภายใน */
+    text-align: center; /* จัดให้อยู่ตรงกลาง */
+    width: 100%;
+  }
+  
