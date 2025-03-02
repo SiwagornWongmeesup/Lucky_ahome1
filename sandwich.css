@@ -489,7 +489,7 @@ footer {
 }
   
 
-
+/* modal */
 .modal {
     display: none; /* ซ่อน modal ตอนแรก */
     position: fixed;
@@ -506,12 +506,25 @@ footer {
     display: flex !important; /* ใช้ !important เพื่อให้แน่ใจว่าแสดง */
 }
 
+.model-section{
+    display: flex;
+}
 .modal-content {
     background: white;
-    padding: 20px;
+    padding: 80px;
     border-radius: 8px;
-    text-align: center;
     position: relative;
+    width: 36vw;
+    max-height: 25vw;
+   
+}
+
+
+.model-section img{
+    height: 17vw;
+    width: 17vw;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .close {
@@ -519,4 +532,16 @@ footer {
     top: 10px;
     right: 10px;
     cursor: pointer;
+}
+
+.model-script{
+    margin-left: 60px;
+}
+
+
+/* Responsive media query code for max width 900px */
+@media screen and (min-width:901px) {
+    .navbar :where(#menu-close-button,#menu-open-button){
+        display: none !important; /* ซ่อนปุ่ม Close */
+    }
 }

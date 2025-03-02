@@ -213,3 +213,10 @@ header .navbar{
     width: 100%;
   }
   
+
+  /* Responsive media query code for max width 900px */
+@media screen and (min-width:901px) {
+    .navbar :where(#menu-close-button,#menu-open-button){
+        display: none !important; /* ซ่อนปุ่ม Close */
+    }
+}

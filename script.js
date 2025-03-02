@@ -43,47 +43,32 @@ const swiper = new Swiper('.swiper', {
     });
 });
 
+// modal button
+//* **/
+function showDetail(button) {
+    const modal = document.getElementById("food-modal");
+    const modalTitle = document.getElementById("modal-name");
+    const modalDescription = document.getElementById("modal-text");
+    const modalDescriptionMore = document.getElementById("modal-dec");
+    const modalImage = document.getElementById("modal-image");
 
-document.addEventListener("DOMContentLoaded", function () {
-  const modal = document.getElementById("food-modal");
-  const modalName = document.getElementById("modal-name");
-  const modalText = document.getElementById("modal-text");
-  const closeModal = document.querySelector(".modal .close");
-  const buttons = document.querySelectorAll(".show-detail");
+    // ดึงข้อมูลจากปุ่มโดยใช้ dataset
+    const name = button.dataset.name;
+    const description = button.dataset.text;
+    const moreText = button.dataset.moreText;
+    const imgSrc = button.dataset.img;
 
-  if (!modal || !modalName || !modalText || !closeModal) {
-      console.error("❌ ไม่พบ modal หรือองค์ประกอบภายใน modal");
-      return;
-  }
+    // อัปเดตเนื้อหาใน modal
+    modalTitle.textContent = name;
+    modalDescription.textContent = description;
+    modalDescriptionMore.textContent = moreText;
+    modalImage.src = imgSrc;
 
-  console.log("✅ พบปุ่มดูรายละเอียด:", buttons.length);
+    // แสดง modal
+    modal.style.display = "flex";
+}
 
-  buttons.forEach(button => {
-      button.addEventListener("click", function (event) {
-          event.preventDefault();
-
-          const name = this.getAttribute("data-name");
-          const text = this.getAttribute("data-text");
-
-          console.log("📌 ชื่อเมนู:", name, "รายละเอียด:", text);
-
-          if (name && text) {
-              modalName.textContent = name;
-              modalText.textContent = text;
-              modal.style.display = "flex"; // ใช้ style.display เพื่อแสดง
-          } else {
-              console.error("⚠️ ไม่มีข้อมูลเมนูหรือรายละเอียด");
-          }
-      });
-  });
-
-  closeModal.addEventListener("click", function () {
-      modal.style.display = "none";
-  });
-
-  window.addEventListener("click", function (event) {
-      if (event.target === modal) {
-          modal.style.display = "none";
-      }
-  });
-});
+// ฟังก์ชันปิด modal
+function closeModal() {
+    document.getElementById("food-modal").style.display = "none";
+}
